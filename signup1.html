@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #008374;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    #signupForm {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    button {
+      background-color: red;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    #passwordStrength {
+      margin-top: 10px;
+      text-align: left;
+    }
+    
+    #passwordStrength span {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    
+    #passwordStrength .weak {
+      background-color: #ff6666;
+      color: #fff;
+    }
+    
+    #passwordStrength .medium {
+      background-color: #ffd966;
+    }
+    
+    #passwordStrength .strong {
+      background-color: #66ff66;
+    }
+    
+    #termsLabel {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="signupForm">
+    <h2>Sign Up</h2>
+    <input type="text" id="firstName" placeholder="First Name" required>
+    <input type="text" id="lastName" placeholder="Last Name" required>
+    <input type="tel" id="mobileNumber" placeholder="Mobile Number" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <input type="date" id="dob" placeholder="Date of Birth" required>
+    <select id="gender" required>
+      <option value="" disabled selected>Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <input type="password" id="password" placeholder="Password" required>
+    <div id="passwordStrength"></div>
+    <input type="checkbox" id="terms" required>
+    <label for="terms" id="termsLabel">I agree to the terms and conditions</label>
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Get input values
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var mobileNumber = document.getElementById("mobileNumber").value;
+      var email = document.getElementById("email").value;
+      var dob = document.getElementById("dob").value;
+      var gender = document.getElementById("gender").value;
+      var password = document.getElementById("password").value;
+      var termsChecked = document.getElementById("terms").checked;
+
+      // Check password strength
+      var passwordStrength = getPasswordStrength(password);
+
+      // Your validation logic here
+      if (firstName.trim() === "") {
+        alert("Please enter your first name.");
+        return;
+      }
+
+      if (lastName.trim() === "") {
+        alert("Please enter your last name.");
+        return;
+      }
+
+      if (mobileNumber.trim() === "") {
+        alert("Please enter your mobile number.");
+        return;
+      }
+
+      if (email.trim() === "") {
+        alert("Please enter your email address.");
+        return;
+      }
+
+      if (dob.trim() === "") {
+        alert("Please enter your date of birth.");
+        return;
+      }
+
+      if (gender.trim() === "") {
+        alert("Please select your gender.");
+        return;
+      }
+
+      if (password.trim() === "") {
+        alert("Please enter a password.");
+        return;
+      }
+
+      if (passwordStrength === "weak") {
+        alert("Password is too weak. Please choose a stronger password.");
+        return;
+      }
+
+      if (!termsChecked) {
+        alert("Please accept the terms and conditions.");
+        return;
+      }
+
+      // If all validations pass, proceed with sign up
+      alert("Sign up successful!");
+      // You can redirect the user or perform other actions here
+    });
+
+    // Function to determine password strength
+    function getPasswordStrength(password) {
+      if (password.length < 6) {
+        return "weak";
+      } else if (password.length < 10) {
+        return "medium";
+      } else {
+        return "strong";
+      }
+    }
+  </script>
+
+</body>
+</html>

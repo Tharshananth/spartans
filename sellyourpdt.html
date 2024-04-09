@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sell Your Product</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #008374;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #sellForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  input[type="file"],
+  button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  button {
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<form id="sellForm" enctype="multipart/form-data">
+  <h2>Sell Your Product</h2>
+  <input type="text" id="productName" placeholder="Product Name" required>
+  <input type="number" id="price" placeholder="Price (INR)" required>
+  <textarea id="description" placeholder="Description" required></textarea>
+  <input type="text" id="contactInfo" placeholder="Contact Information" required>
+  <input type="file" id="productImage" accept="image/*" required>
+  <button type="submit">Sell</button>
+</form>
+
+</body>
+</html>

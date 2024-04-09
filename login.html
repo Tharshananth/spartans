@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('webpage.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        .profile {
+            margin-right: 20px;
+        }
+
+        .profile img {
+            width: 70px;
+            height: 70px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        #vertical-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #vertical-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        #vertical-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .center-text {
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            font-weight: bold;
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+        }
+
+        .quote {
+            position: absolute;
+            top: 60%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-container {
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translateY(-50%);
+            width: 40%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        #about-section, #contact-section, #feedback-form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #about-section h2, #contact-section h2, #feedback-form h2 {
+            color: #4CAF50;
+        }
+
+        #about-section p, #contact-section p, #feedback-form p {
+            color: #333;
+        }
+
+        #about-section {
+            padding-top: 40%;
+            padding-left: 20%;
+        }
+
+        #contact-section {
+            padding-top: 5%;
+            padding-left: 50%;
+        }
+
+        #feedback-form {
+            padding-left: 50%;
+            padding-top: 5%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <img id="profile-image" src="logo.jpg" alt="Profile">
+        </div>
+        <nav>
+            <ul>
+                <li><button id="resume-button" target="_blank" onclick="window.open('weblogin.html', '_blank')">Log In</button></li>
+                <li><button id="" target="_blank" onclick="window.open('signup1.html', '_blank')">Sign Up</button></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="center-text">ShopIn</div>
+    <img class="image-container" src="ph2.jpg" alt="Image">
+    <div class="quote">"Bringing you the best shopping experience online."</div>
+    <div id="vertical-menu">
+        <a href="https://mediafiles.botpress.cloud/fbd392e3-4356-441c-a997-fce916509167/webchat/bot.html">AI</a>
+        <a onclick="window.open('sellyourpdt.html', '_blank')">Sell your product</a>
+        <a onclick="window.open('sellyourcraft.html', '_blank')">Buy product</a>
+        <a href="#about-section">About</a>
+        <a href="#contact-section">Contact</a>
+        <a href="#feedback-form">Feedback</a>
+    </div>
+    <div id="about-section">
+        <h2>About Us</h2>
+        <p>Join our thriving community connecting startup companies, <br>industrial players, and small-scale industries, <br>facilitating seamless procurement of essential elements from trusted buyers.<br>
+            Empowering businesses to make informed decisions and <br>thrive in today's dynamic market landscape. Explore Shopin' today and <br>unlock the potential for strategic growth and success </p>
+    </div>
+    <div id="contact-section">
+        <h2>Contact Us</h2>
+        <p>Email: ShopIn@info.com</p>
+        <p>Phone: 123-456-7890</p>
+        <p>Address: Somewhere in Chennai</p>
+    </div>
+    <div id="feedback-form">
+        <h2>Feedback Form</h2>
+        <form id="feedback-form-inner">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        const verticalMenuLinks = document.querySelectorAll('#vertical-menu a');
+        verticalMenuLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
